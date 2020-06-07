@@ -1,0 +1,12 @@
+<h2> {{ hero.name }} Details </h2>
+<div> {{ hero.name }}'s hero type is {{hero.type}} </div>
+<div><span> ID: </span> {{ hero.id }} </div>
+<div>
+    <label> Name: 
+        <input [(ngModel)]="hero.name" placeholder="Name of the Hero"/>
+    </label>
+</div>
+<div>
+    Attribute:
+    <input [(ngModel)]="hero.type" placeholder="Type of the Hero"/>
+</div>
