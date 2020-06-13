@@ -1,12 +1,22 @@
-<h2> {{ hero.name }} Details </h2>
-<div> {{ hero.name }}'s hero type is {{hero.type}} </div>
-<div><span> ID: </span> {{ hero.id }} </div>
-<div>
-    <label> Name: 
-        <input [(ngModel)]="hero.name" placeholder="Name of the Hero"/>
-    </label>
-</div>
-<div>
-    Attribute:
-    <input [(ngModel)]="hero.type" placeholder="Type of the Hero"/>
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes" 
+    [class.selected]="hero === selectedHero" 
+    (click)="onSelect(hero)">
+        <span class="badge"> {{ hero.id }}</span> {{ hero.name }}
+    </li>
+</ul>
+<div *ngIf="selectedHero">
+    <h2> {{ selectedHero.name }} Details </h2>
+    <div> {{ selectedHero.name }}'s hero type is {{selectedHero.type}} </div>
+    <div><span> ID: </span> {{ selectedHero.id }} </div>
+    <div>
+        <label> Name: 
+            <input [(ngModel)]="selectedHero.name" placeholder="Name of the Hero"/>
+        </label>
+    </div>
+    <div>
+        Attribute:
+        <input [(ngModel)]="selectedHero.type" placeholder="Type of the Hero"/>
+    </div>
 </div>
