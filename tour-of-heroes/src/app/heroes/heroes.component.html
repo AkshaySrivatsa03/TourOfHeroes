@@ -6,17 +6,4 @@
         <span class="badge"> {{ hero.id }}</span> {{ hero.name }}
     </li>
 </ul>
-<div *ngIf="selectedHero">
-    <h2> {{ selectedHero.name }} Details </h2>
-    <div> {{ selectedHero.name }}'s hero type is {{selectedHero.type}} </div>
-    <div><span> ID: </span> {{ selectedHero.id }} </div>
-    <div>
-        <label> Name: 
-            <input [(ngModel)]="selectedHero.name" placeholder="Name of the Hero"/>
-        </label>
-    </div>
-    <div>
-        Attribute:
-        <input [(ngModel)]="selectedHero.type" placeholder="Type of the Hero"/>
-    </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
