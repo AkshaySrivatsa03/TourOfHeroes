@@ -2,8 +2,9 @@
 <div>
     <label>
         <input #heroName/>
+        <input #heroType/>
     </label>
-    <button (click)="add(heroName.value); heroName.value=''">
+    <button (click)="add(heroName.value, heroType.value); heroName.value=''; heroType.value=''">
         Add New Hero
     </button>
 </div>
